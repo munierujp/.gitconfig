@@ -1,0 +1,10 @@
+[user]
+	name = Munieru
+	email = 20086673+munierujp@users.noreply.github.com
+
+[alias]
+	alias =  !git config --list | grep '^alias\\.'
+        branch-rm = !git branch --merged | grep -vE '^\\*|\\<master\\>|\\<develop\\>' | xargs -I % git branch -d %
+        branch-rmf = !git branch | grep -vE '^\\*|\\<master\\>|\\<develop\\>' | xargs -I % git branch -D %
+
+
