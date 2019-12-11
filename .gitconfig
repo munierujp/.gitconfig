@@ -7,4 +7,5 @@
         close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
 	clone-from = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	cp = !cp $1 $2 && git add $2
+	new = "!f () { git pull && git checkout -b $1;};f"
 
