@@ -13,7 +13,7 @@ or
 $ less ~/.gitconfig
 ```
 
-### edit global config
+### Edit global config
 ```sh
 $ git config --global -e
 ```
