@@ -2,9 +2,24 @@
 My .gitconfig
 
 ## Commands
+### See current global config
 ```sh
-# see current global config
 $ git config --global -l
-# edit global config
+```
+
+or
+
+```sh
+$ less ~/.gitconfig
+```
+
+### edit global config
+```sh
 $ git config --global -e
+```
+
+or
+
+```sh
+$ vi ~/.gitconfig
 ```
