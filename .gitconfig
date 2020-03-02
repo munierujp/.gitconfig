@@ -1,3 +1,6 @@
+[core]
+        excludesfile = ~/.gitignore
+
 [user]
 	name = Munieru
 	email = 20086673+munierujp@users.noreply.github.com
