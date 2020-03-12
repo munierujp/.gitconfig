@@ -7,8 +7,8 @@
 
 [alias]
 	alias =  !git config --list | grep '^alias\\.'
-        close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
-	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
+	close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
 	cp = !cp $1 $2 && git add $2
+	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	new = "!f () { git pull && git checkout -b $1;};f"
 	push-new = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
