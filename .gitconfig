@@ -14,3 +14,4 @@
 	new = "!f () { git pull && git checkout -b $1;};f"
 	push-new = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
 	revert-to = !REVISION="HEAD~$1" && git revert $REVISION && :
+	set-upstream = remote add upstream
