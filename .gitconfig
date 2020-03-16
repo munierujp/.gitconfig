@@ -7,6 +7,7 @@
 
 [alias]
 	alias =  !git config --list | grep '^alias\\.'
+	cb = checkout
 	close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
         commit-empty = commit --allow-empty 
 	cp = !cp $1 $2 && git add $2
