@@ -13,8 +13,8 @@
 	cp = !cp $1 $2 && git add $2
 	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	new = "!f () { git pull && git checkout -b $1;};f"
+	publish = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
 	pull-upstream = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git pull upstream ${CURRENT_BRANCH}
-	push-new = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
 	revert-to = !REVISION="HEAD~$1" && git revert $REVISION && :
 	set-upstream = remote add upstream
         sync = !git pull-upstream && git push
