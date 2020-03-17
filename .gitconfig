@@ -6,15 +6,27 @@
 	email = 20086673+munierujp@users.noreply.github.com
 
 [alias]
+	# show alias list
 	alias =  !git config --list | grep '^alias\\.'
+	# change branch
 	cb = checkout
+	# switch to `master` branch => pull => remove old branch
 	close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
+	# commit empty commit
         commit-empty = commit --allow-empty 
+	# copy file => add to index
 	cp = !cp $1 $2 && git add $2
+	# clone repository from GitHub to `$WORKSPACE/@<user-name>/<repository-name>` directory
 	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
+	# pull => create new branch
 	new = "!f () { git pull && git checkout -b $1;};f"
+	# push with creating new branch to remote
 	publish = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
+	# pull from `upstream` repository
 	pull-upstream = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git pull upstream ${CURRENT_BRANCH}
+	# revert with number from HEAD
 	revert-to = !REVISION="HEAD~$1" && git revert $REVISION && :
+	# set `upstream` repository
 	set-upstream = remote add upstream
+	# pull from `upstream` repository => push
         sync = !git pull-upstream && git push
