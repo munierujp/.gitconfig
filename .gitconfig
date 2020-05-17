@@ -10,8 +10,10 @@
 	alias =  !git config --list | grep '^alias\\.'
 	# change branch
 	cb = checkout
+	# show current branch
+	current-branch = rev-parse --abbrev-ref HEAD
 	# switch to `master` branch => pull => remove old branch
-	close = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
+	close = !CURRENT_BRANCH=$(git current-branch) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
         commit-empty = commit --allow-empty 
 	# copy file => add to index
@@ -21,9 +23,9 @@
 	# pull => create new branch
 	new = "!f () { git pull && git checkout -b $1;};f"
 	# push with creating new branch to remote
-	publish = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git push --set-upstream origin ${CURRENT_BRANCH}
+	publish = !CURRENT_BRANCH=$(git current-branch) && git push --set-upstream origin ${CURRENT_BRANCH}
 	# pull from `upstream` repository
-	pull-upstream = !CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD) && git pull upstream ${CURRENT_BRANCH}
+	pull-upstream = !CURRENT_BRANCH=$(git current-branch) && git pull upstream ${CURRENT_BRANCH}
 	# revert with number from HEAD
 	revert-to = !REVISION="HEAD~$1" && git revert $REVISION && :
 	# set `upstream` repository
