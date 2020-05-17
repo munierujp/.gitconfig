@@ -10,14 +10,14 @@
 	alias =  !git config --list | grep '^alias\\.'
 	# change branch
 	cb = checkout
-	# show current branch
-	current-branch = rev-parse --abbrev-ref HEAD
 	# switch to `master` branch => pull => remove old branch
 	close = !CURRENT_BRANCH=$(git current-branch) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
         commit-empty = commit --allow-empty 
 	# copy file => add to index
 	cp = !cp $1 $2 && git add $2
+	# show current branch
+	current-branch = rev-parse --abbrev-ref HEAD
 	# clone repository from GitHub to `$WORKSPACE/@<user-name>/<repository-name>` directory
 	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	# pull => create new branch
