@@ -26,6 +26,8 @@
 	publish = !CURRENT_BRANCH=$(git current-branch) && git push --set-upstream origin ${CURRENT_BRANCH}
 	# pull from `upstream` repository
 	pull-upstream = !CURRENT_BRANCH=$(git current-branch) && git pull upstream ${CURRENT_BRANCH}
+	# push with --force-with-lease option
+	push-f = push --force-with-lease
 	# revert with number from HEAD
 	revert-to = !REVISION="HEAD~$1" && git revert $REVISION && :
 	# set `upstream` repository
