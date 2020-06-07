@@ -5,3 +5,7 @@
 # direnv
 # see https://github.com/direnv/direnv
 .envrc
+
+# Code Cover
+# see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
+coverageconfig.json
