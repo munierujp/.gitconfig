@@ -2,4 +2,5 @@
 .DS_Store
 
 # direnv
+# see https://github.com/direnv/direnv
 .envrc
