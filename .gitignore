@@ -6,6 +6,9 @@
 # see https://github.com/direnv/direnv
 .envrc
 
+# Visaul Studio Code
+*.code-workspace
+
 # Code Cover
 # see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
 coverageconfig.json
