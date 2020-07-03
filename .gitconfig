@@ -8,8 +8,6 @@
 [alias]
 	# show alias list
 	alias =  !git config --list | grep '^alias\\.'
-	# change branch
-	cb = checkout
 	# switch to `master` branch => pull => remove old branch
 	close = !CURRENT_BRANCH=$(git current-branch) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
