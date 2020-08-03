@@ -8,8 +8,8 @@
 [alias]
 	# show alias list
 	alias =  !git config --list | grep '^alias\\.'
-	# switch to `master` branch => pull => remove old branch
-	close = !CURRENT_BRANCH=$(git current-branch) && git checkout master && git pull && git branch -D ${CURRENT_BRANCH}
+	# switch to default branch => pull => remove old branch
+	close = !CURRENT_BRANCH=$(git current-branch) && DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH} && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
         commit-empty = commit --allow-empty 
 	# copy file => add to index
