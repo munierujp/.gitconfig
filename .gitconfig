@@ -27,7 +27,7 @@
 	# pull from `upstream` repository
 	pull-upstream = !CURRENT_BRANCH=$(git current-branch) && git pull upstream ${CURRENT_BRANCH}
 	# push with --force-with-lease option
-	push-f = push --force-with-lease
+	push-force = push --force-with-lease
 	# set `upstream` repository
 	set-upstream = remote add upstream
 	# pull from `upstream` repository => push
