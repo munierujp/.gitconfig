@@ -8,6 +8,8 @@
 [alias]
 	# show alias list
 	alias =  !git config --list | grep '^alias\\.'
+	# clone repository from GitHub to `$WORKSPACE/@<user>/<repo>` directory (e.g. $WORKSPACE/@munierujp/.gitconfig)
+	clone-hub = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	# switch to default branch => pull => remove old branch
 	close = !CURRENT_BRANCH=$(git current-branch) && DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH} && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
@@ -18,8 +20,6 @@
 	current-branch = rev-parse --abbrev-ref HEAD
 	# show default branch
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | awk -F '[/]' '{print $NF}'
-	# clone repository from GitHub to `$WORKSPACE/@<user-name>/<repository-name>` directory
-	hub-clone = !URL=$1 && DIR="@$(sh $HOME/bin/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	# pull => create new branch
 	new = "!f () { git pull && git checkout -b $1;};f"
 	# push with creating new branch to remote
