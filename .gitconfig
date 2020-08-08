@@ -18,6 +18,8 @@
 	cp = !cp $1 $2 && git add $2
 	# show current branch
 	current-branch = rev-parse --abbrev-ref HEAD
+	# switch to default branch
+	default = !DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH}
 	# show default branch
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | awk -F '[/]' '{print $NF}'
 	# pull => create new branch
