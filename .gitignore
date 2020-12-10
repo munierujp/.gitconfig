@@ -12,6 +12,10 @@
 
 # Code Cover
 # see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
-coverageconfig.json 
+coverageconfig.json
+
+# VS Code Counter
+# see https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter
+.VSCodeCounter
 
 TODO.md
