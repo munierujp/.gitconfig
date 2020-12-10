@@ -4,14 +4,14 @@
 
 # direnv
 # see https://github.com/direnv/direnv
-/.envrc
+.envrc
 
 # Visual Studio Code
 # see https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
-/*.code-workspace
+*.code-workspace
 
 # Code Cover
 # see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
-/coverageconfig.json 
+coverageconfig.json 
 
-/TODO.md
+TODO.md
