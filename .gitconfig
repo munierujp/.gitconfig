@@ -11,7 +11,7 @@
 	# clone repository from GitHub to `$WORKSPACE/@<user>/<repo>` directory (e.g. $WORKSPACE/@munierujp/.gitconfig)
 	clone-hub = !URL=$1 && DIR="@$(sh $HOME/scripts/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	# switch to default branch => pull => remove old branch
-	close = !CURRENT_BRANCH=$(git current-branch) && DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH} && git pull && git branch -D ${CURRENT_BRANCH}
+	close = !CURRENT_BRANCH=$(git current-branch) && git default && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
 	commit-empty = commit --allow-empty
 	# copy file => add to index
