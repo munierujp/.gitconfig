@@ -13,7 +13,7 @@
 	# switch to default branch => pull => remove old branch
 	close = !CURRENT_BRANCH=$(git current-branch) && DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH} && git pull && git branch -D ${CURRENT_BRANCH}
 	# commit empty commit
-        commit-empty = commit --allow-empty 
+	commit-empty = commit --allow-empty
 	# copy file => add to index
 	cp = !cp $1 $2 && git add $2
 	# show current branch
@@ -22,6 +22,8 @@
 	default = !DEFAULT_BRANCH=$(git default-branch) && git checkout ${DEFAULT_BRANCH}
 	# show default branch
 	default-branch = !git symbolic-ref refs/remotes/origin/HEAD | awk -F '[/]' '{print $NF}'
+	# create new directory
+	mkdir = !GITKEEP_FILE="$1/.gitkeep" && mkdir $1 && touch $GITKEEP_FILE && git add $GITKEEP_FILE
 	# pull => create new branch
 	new = "!f () { git pull && git checkout -b $1;};f"
 	# push with creating new branch to remote
