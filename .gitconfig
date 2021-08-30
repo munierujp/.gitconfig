@@ -8,6 +8,8 @@
 [alias]
 	# show alias list
 	alias =  !git config --list | grep '^alias\\.'
+        # switch to default branch => remove other branch
+        clean = !git default && git branch | xargs git branch -D
 	# clone repository from GitHub to `$WORKSPACE/@<user>/<repo>` directory (e.g. $WORKSPACE/@munierujp/.gitconfig)
 	clone-hub = !URL=$1 && DIR="@$(sh $HOME/scripts/parse-github-url-to-user-name.sh $URL)" && cd $WORKSPACE && mkdir -p $DIR && cd $DIR && git clone $URL && :
 	# switch to default branch => pull => remove old branch
