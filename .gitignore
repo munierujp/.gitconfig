@@ -15,7 +15,7 @@
 coverageconfig.json
 
 # VS Code Counter
-# see https://marketplace.visualstudio.com/items?itemName=uctakeoff.vscode-counter
+# see https://github.com/uctakeoff/vscode-counter
 .VSCodeCounter
 
 TODO.md
