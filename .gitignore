@@ -1,5 +1,5 @@
 # macOS
-# see https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# see https://github.com/github/gitignore/blob/33243d9491911332228307c915ff95707791a91f/Global/macOS.gitignore#L2
 .DS_Store
 
 # direnv
