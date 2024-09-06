@@ -1,22 +1,22 @@
-# macOS
-# see https://github.com/github/gitignore/blob/33243d9491911332228307c915ff95707791a91f/Global/macOS.gitignore#L2
-.DS_Store
+# Code Cover
+# see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
+coverageconfig.json
 
 # direnv
 # see https://github.com/direnv/direnv
 .envrc
 
+# macOS
+# see https://github.com/github/gitignore/blob/33243d9491911332228307c915ff95707791a91f/Global/macOS.gitignore#L2
+.DS_Store
+
 # Visual Studio
 # see https://github.com/github/gitignore/blob/33243d9491911332228307c915ff95707791a91f/VisualStudio.gitignore#L385
 *.code-workspace
-
-# Code Cover
-# see https://marketplace.visualstudio.com/items?itemName=bradleymeck.codecover
-coverageconfig.json
 
 # VS Code Counter
 # see https://github.com/uctakeoff/vscode-counter
 .VSCodeCounter
 
-TODO.md
 NOTE.md
+TODO.md
